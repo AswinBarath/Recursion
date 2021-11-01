@@ -1,10 +1,14 @@
 package recursion_problems;
 
+import java.util.Scanner;
+
 public class PrintSubsequences {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		printSubsequences("abc", "");
+		Scanner scan = new Scanner(System.in);
+		String str = scan.nextLine();
+		printSubsequences(str, "");
+		scan.close();
 	}
 
 	public static void printSubsequences(String str, String res) {
