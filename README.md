@@ -10,7 +10,7 @@
 
 | Completion Status | Problems on Recursion | Explanation | Solution |
 | --- | --- | --- | --- |
-| 🔃 | [Subset Sums](https://practice.geeksforgeeks.org/problems/subset-sums2234/1#) | [Brute, Better & Optimal Approaches](#) | [Java Soultion](./src/sde_sheet/.java) |
+| ✅ | [Subset Sums](https://practice.geeksforgeeks.org/problems/subset-sums2234/1#) | [Brute, Better & Optimal Approaches](#subset-sums) | [Java Soultion](./src/sde_sheet/SubsetSums_I.java) |
 | 🔃 | [Subsets II](https://leetcode.com/problems/subsets-ii/) | [Brute, Better & Optimal Approaches](#) | [Java Soultion](./src/sde_sheet/.java) |
 | 🔃 | [Combination Sum](https://leetcode.com/problems/combination-sum/) | [Brute, Better & Optimal Approaches](#) | [Java Soultion](./src/sde_sheet/.java) |
 | 🔃 | [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/) | [Brute, Better & Optimal Approaches](#) | [Java Soultion](./src/sde_sheet/.java) |
