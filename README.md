@@ -30,6 +30,15 @@
 
 ---
 
+## Subset Sums
+
+- Time Complexity: **(2^N) + ((2^N) * log(2^N))**
+  - For every index, we have two recursive choices (pick & don't pick)
+  - So, if the no. of indices is **N**, then the time complexity for all the choices in the recursive tree is **2^N**
+  - As per the question, we have to return the answer - sum of individual subsets, in the increasing order. Hence, for sorting the answer it will take **(2^N) * log(2^N)**
+
+---
+
 ## Tips
 
 - The problem-solving mindset to solve recursion problems comes with **Practice!**
@@ -98,7 +107,7 @@
 
 ## Visualizing Recursion - Recursion Tree
 
-<img src="" />
+<img src="assets/Visualizing Recursion.jpg" alt="Visualizing Recursion - Recursion Tree" />
 
 ## What is Tail Recursion ?
 
