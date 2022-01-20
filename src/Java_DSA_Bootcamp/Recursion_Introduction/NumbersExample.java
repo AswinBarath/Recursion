@@ -1,4 +1,4 @@
-package Java_DSA_Bootcamp.introduction;
+package Java_DSA_Bootcamp.Recursion_Introduction;
 
 public class NumbersExample {
 
