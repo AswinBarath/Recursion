@@ -24,7 +24,14 @@ public class R7_ReverseAnArray {
 			arr[i] = input.nextInt();
 		}
 
-		reverseArray(arr, 0, n - 1);
+		reverseArrayTwoPointers(arr, 0, n - 1);
+
+		for (int i = 0; i < n; i++) {
+			System.out.print(arr[i] + " ");
+		}
+
+		reverseArrayOnePointer(arr);
+		System.out.println();
 
 		for (int i = 0; i < n; i++) {
 			System.out.print(arr[i] + " ");
@@ -34,7 +41,7 @@ public class R7_ReverseAnArray {
 
 	}
 
-	public static void reverseArray(int[] arr, int l, int r) {
+	public static void reverseArrayTwoPointers(int[] arr, int l, int r) {
 
 		if (l >= r) {
 			return;
@@ -42,7 +49,23 @@ public class R7_ReverseAnArray {
 
 		swap(arr, l, r);
 
-		reverseArray(arr, l + 1, r - 1);
+		reverseArrayTwoPointers(arr, l + 1, r - 1);
+
+	}
+
+	public static void reverseArrayOnePointer(int[] arr) {
+
+		reverseArrayOnePointer(arr, 0, arr.length);
+	}
+
+	public static void reverseArrayOnePointer(int[] arr, int i, int n) {
+		if (i >= n / 2) {
+			return;
+		}
+
+		swap(arr, i, n - i - 1);
+
+		reverseArrayOnePointer(arr, i + 1, n);
 
 	}
 
