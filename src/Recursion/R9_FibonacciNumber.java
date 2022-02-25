@@ -2,6 +2,10 @@ package Recursion;
 
 import java.util.Scanner;
 
+/*
+ * Time Complexity: O(2 ^ n) 
+ */
+
 public class R9_FibonacciNumber {
 
 	public static void main(String[] args) {
