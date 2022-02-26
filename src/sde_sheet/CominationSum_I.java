@@ -3,50 +3,49 @@ package sde_sheet;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Time Complexity: O(2^t * k)
+ * where t is the no. of recursive calls for unlimited no. of choice of given array ele 
+ * where k is the number of times we save answer in a ds
+ * 
+ * Space Complexity: O(k * x)
+ * where k is the average length of the combination
+ * where x is the number of combinations
+ */
+
 public class CominationSum_I {
 
 	public static void main(String[] args) {
 		int[] candidates = { 2, 3, 6, 7 };
 		int target = 7;
 
-		List<List<Integer>> answer = combinationSum(candidates, target);
+		List<List<Integer>> answer = findCombinations(candidates, target);
 
 		for (List<Integer> sub : answer) {
-			for (int num : sub) {
-				System.out.print(num + ", ");
-			}
-			System.out.println();
+			System.out.println(sub);
 		}
 
 	}
 
-	public static List<List<Integer>> combinationSum(int[] candidates, int target) {
+	public static void findCombinations(int ind, int[] arr, int target, List<List<Integer>> ans, List<Integer> ds) {
+		if (ind == arr.length) {
+			if (target == 0) {
+				ans.add(new ArrayList<>(ds)); // O(n)
+			}
+			return;
+		}
+
+		if (arr[ind] <= target) {
+			ds.add(arr[ind]);
+			findCombinations(ind, arr, target - arr[ind], ans, ds);
+			ds.remove(ds.size() - 1);
+		}
+		findCombinations(ind + 1, arr, target, ans, ds);
+	}
+
+	public static List<List<Integer>> findCombinations(int[] candidates, int target) {
 		List<List<Integer>> answer = new ArrayList<>();
-		combinationSum(candidates, target, 0, answer, new ArrayList<Integer>());
+		findCombinations(0, candidates, target, answer, new ArrayList<Integer>());
 		return answer;
 	}
-
-	public static void combinationSum(int[] candidates, int target, int i, List<List<Integer>> answer,
-			List<Integer> choices) {
-
-		if (target == 0) {
-			answer.add(choices);
-			choices = new ArrayList<Integer>();
-			return;
-		}
-
-		if (target < 0 || i >= candidates.length) {
-			choices = new ArrayList<Integer>();
-			return;
-		}
-
-		// pick
-		choices.add(candidates[i]);
-		combinationSum(candidates, target - candidates[i], i, answer, choices);
-
-		// don't pick
-//		choices.remove(choices.lastIndexOf(candidates[i]));
-		combinationSum(candidates, target, i + 1, answer, choices);
-	}
-
 }
