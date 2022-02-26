@@ -1,5 +1,9 @@
 package Recursion;
 
+/*
+ * Time Complexity: O(2^n)
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +48,11 @@ public class R13_CountSubsequencesWithkSum {
 
 	public static int subsequencesCountSimpleCode(int i, int s, int sum, int[] arr, int n) {
 
+		// condition does not satisfy
+		// strictly for +ve array elements
+		if (s > sum)
+			return 0;
+		// condition satisfies
 		if (i == n) {
 			if (s == sum) {
 				return 1;
