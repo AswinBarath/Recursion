@@ -3,6 +3,11 @@ package Recursion;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Time Complexity: O(2^n * n)
+ * Space Complexity: O(n)
+ */
+
 public class R10_PrintAllSubsequences {
 
 	public static void main(String[] args) {
