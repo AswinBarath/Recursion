@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+/*
+ * Time Complexity: O(2^n * (2^n)log(2^n) )
+ * 2^n for number of recursive calls
+ * (2^n)log(2^n) for sorting the sum of subsets Array List
+ * 
+ */
 public class SubsetSums_I {
 
 	public static void main(String[] args) {
