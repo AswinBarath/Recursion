@@ -32,11 +32,24 @@
 - You will face difficulties while learning Recursion, **so don't skip it! don't give up!**
 - Because once you understand recursion its very easy to proceed with problem solving
 - **Don't break your learning streak!**
-- Do not overthink !
+- **Do not overthink!**
 
 ---
 
 ## Notes
+
+### What is an algorithm?
+
+- Algorithms allows us to use data structures and perform actions on that data
+  - Data Structures + Algorithms = Programs
+  - Example:
+    - Class {} + function() = Programs
+- Most commonly used algorithms:
+  - [Sorting](https://github.com/AswinBarath/Sorting-algorithms)
+  - [Searching + BFS + DFS](https://github.com/AswinBarath/Binary-Search)
+  - [Recursion](https://github.com/AswinBarath/Recursion)
+  - [Dynamic Programming](https://github.com/AswinBarath/Dynamic-Programming)
+- Certain algorithms allow us to improve the time complexity to smaller and better ones.
 
 ### Working of function calls
 
@@ -92,7 +105,16 @@
 - When the last function call is the last statement in the body, it is called **Tail Recursion**
 - Take the programs *NumbersExampleRecursion* and *Fibonacci* to understand tail recursion
   - In the numbers example, the *print(i)* recursive call is the last statement, hence it is a Tail Recusion
-  - Whereas, in the Fibonacci program, the last statement is a return statement which is waiting for the execution of the two recursive calls *fibo(n-1)* and *fibo(n-2)*
+  - Whereas, in the Fibonacci program, the last statement is a return statement which is waiting for the execution of the two recursive calls *fibo(n-1)* and *fibo(n-2)*. Hence it is not a Tail Recursion.
+
+### Tail call optimization
+
+- Usage of accumulator for storing answers
+- **Factorial Example:**
+- ![Factorial Code](https://i.ytimg.com/vi/2bRGmoZbK_Y/mqdefault.jpg)
+- **Fibonacci Example:**
+- ![Fibonacci Code](https://wa-cdn.azureedge.net/photos/size(700)/api/attachments/att/25/Linkedin-JavaScript-Tail-Call-Optimization---Fibonacci-Series.png/Linkedin-JavaScript-Tail-Call-Optimization---Fibonacci-Series.700.jpg)
+
 
 ### Types of Recurrence relations
 
@@ -111,6 +133,7 @@
     - Two or more recursive calls are made on the basis of input
 4. Use functional arguments
     - Use functional arguments to store and pass computations to recursive calls
+    - These functional arguements are also called as **accumulators**
 5. Use Static variable
     - Use static variable to store outside the scope of recursive functions
 6. Base case return value
