@@ -9,12 +9,13 @@ public class PowerOfN {
 		Scanner in = new Scanner(System.in);
 		double x = in.nextDouble();
 		int n = in.nextInt();
-		System.out.println(myPow(x, n));
+		System.out.println("Recursive=" + myPow(x, n));
+		System.out.println("Iterative=" + myPowIterative(x, n));
 		in.close();
 	}
 
 	// Iterative Solution
-	public static double myPow(double x, int n) {
+	public static double myPowIterative(double x, int n) {
 		double ans = 1.0;
 		long nn = n;
 		if (nn < 0)
@@ -34,31 +35,30 @@ public class PowerOfN {
 	}
 
 	// Recursive Solution
-//	public static double myPow(double x, int n) {
-//        // Base case
-//        if(n==0) {
-//            return 1;
-//        }
-//        
-//        // NEGATIVE EDGE CASE
-//        if(n<0) {
-//        	n = -1 * n;
-//            return ( (double) 1 / (double) myPow(x, n) );
-//        }        
-//
-//        //Recursive case 
-//        double ans, nb2;
-//    	nb2 = myPow(x, n/2);
-//    	
-//        if(n%2!=0) {
-//            ans = nb2 * nb2 * x;
-//        }
-//        else {
-//            ans = nb2 * nb2;
-//        }
-//                
-//        return ans;
-//        
-//    }
+	public static double myPow(double x, int n) {
+		// Base case
+		if (n == 0) {
+			return 1;
+		}
+
+		// NEGATIVE EDGE CASE
+		if (n < 0) {
+			n = -1 * n;
+			return ((double) 1 / (double) myPow(x, n));
+		}
+
+		// Recursive case
+		double ans, nb2;
+		nb2 = myPow(x, n / 2);
+
+		if (n % 2 != 0) {
+			ans = nb2 * nb2 * x;
+		} else {
+			ans = nb2 * nb2;
+		}
+
+		return ans;
+
+	}
 
 }
